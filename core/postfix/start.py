@@ -67,4 +67,4 @@ os.system("/usr/libexec/postfix/post-install meta_directory=/etc/postfix create-
 # Before starting postfix, we need to check permissions on /queue
 # in the event that postfix,postdrop id have changed
 os.system("postfix set-permissions")
-os.system("postfix start-fg")
+os.execl("/usr/sbin/postfix", "postfix", "start-fg")
